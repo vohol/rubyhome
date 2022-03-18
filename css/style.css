@@ -133,7 +133,6 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 250px;
   max-height: 65px;
   width: 35%;
-  height: 35%;
 }
 .header__logo .logo {
   width: 100%;
@@ -168,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__navigation {
   position: absolute;
   z-index: 1;
-  top: 64px;
+  top: 80px;
   left: 0;
   right: 0;
   background: #ffffff;
@@ -196,10 +195,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 35px;
     padding-bottom: 35px;
     margin-bottom: 35px;
+    min-height: 80px;
   }
   .header__logo {
     width: 100%;
-    height: 100%;
     margin-right: 309px;
   }
   .header__open-menu {
@@ -233,6 +232,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin-bottom: 100px;
 }
 .hero__slogan {
   display: block;
@@ -266,6 +266,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    min-height: 615px;
   }
   .hero__slogan {
     font-size: 61px;
@@ -474,19 +475,67 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 22px;
   }
 }
-.cont {
-  background-color: white;
-  width: 100px;
-  height: 100px;
+.section-title {
+  display: flex;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 66px;
+}
+.section-title__first-letter {
+  position: relative;
+  font-weight: 600;
+  font-size: 35px;
+}
+.section-title__house-img {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-.kek {
-  margin: 0 auto;
-  border-radius: 0 0 0 100px;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  box-shadow: -3px 3px black;
+@media screen and (min-width: 1200px) {
+  .section-title {
+    font-size: 44px;
+  }
+  .section-title__first-letter {
+    font-size: 44px;
+  }
+}
+.partners .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.partners__title {
+  margin-bottom: 65px;
+}
+.partners__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.partners__element:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .partners .container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 142px;
+  }
+  .partners__title {
+    align-self: center;
+  }
+  .partners__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .partners__element:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
