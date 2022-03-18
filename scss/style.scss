@@ -195,7 +195,6 @@ $color-white: #ffffff;
   }
   &__right-side {
     display: none;
-    //max-width: 484px;
     width: 100%;
     z-index: -1;
     object-fit: contain;
@@ -205,20 +204,6 @@ $color-white: #ffffff;
     border-radius: 10px;
   }
 }
-// @media screen and (min-width: 422px) {
-//   .hero {
-//     &__right-side {
-//       top: 25%;
-//     }
-//   }
-// }
-// @media screen and (min-width: 440px) {
-//   .hero {
-//     &__right-side {
-//       top: 20%;
-//     }
-//   }
-// }
 
 @media screen and (min-width: 1200px) {
   .hero {
@@ -407,6 +392,13 @@ $color-white: #ffffff;
     font-size: 16px;
     line-height: 33px;
   }
+  .option {
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+  }
+  .nice-select-dropdown {
+    border: none;
+  }
 }
 
 .nice-select::after {
@@ -434,9 +426,11 @@ $color-white: #ffffff;
     }
   }
   .nice-select {
-    .current,
-    .option {
+    .current {
       font-size: 22px;
+    }
+    .option {
+      font-size: 18px;
     }
   }
 }

@@ -444,6 +444,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   line-height: 33px;
 }
+.nice-select .option {
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+}
+.nice-select .nice-select-dropdown {
+  border: none;
+}
 
 .nice-select::after {
   top: 13px;
@@ -470,9 +477,11 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(3, 10, 27, 0.1);
   }
 
-  .nice-select .current,
-.nice-select .option {
+  .nice-select .current {
     font-size: 22px;
+  }
+  .nice-select .option {
+    font-size: 18px;
   }
 }
 .section-title {
