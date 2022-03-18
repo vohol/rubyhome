@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/nice-select2.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -45,7 +46,142 @@
         </button>
     </div>
 </header>
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="hero__left-side">
+                <span class="hero__slogan">
+                    Find the perfect place to stay with your family
+                </span>
+                <section class="hero__description">Buying a home is a life-changing experience, so shouldn’t your real estate agent be a life changer.</section>
+                <div class="tabs">
+                    <div class="tabs__element">
+                        <span class="tabs__title tabs__title--active">Buy</span>
+                        <div class="tabs__selection tabs__selection--active">
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Location</span>
+                                <select name="location" id="buy-location-selector" class="tabs__location-selector" required>
+                                    <option selected>Dnaka</option>
+                                    <option value="1">London</option>
+                                    <option value="2">Tokio</option>
+                                    <option value="3">Milan</option>
+                                </select>
+                            </div>
 
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Property type</span>
+                                <select name="property" id="buy-property-selector" class="tabs__property-selector">
+                                    <option selected>Duplex</option>
+                                    <option value="1">Townhouse</option>
+                                    <option value="2">Something else</option>
+                                    <option value="3">Ilon Mask</option>
+                                </select>
+                            </div>
+                            
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Price</span>
+                                <select name="prive" id="buy-price-selector" class="tabs__price-selector">
+                                    <option selected>$4000-$8000</option>
+                                    <option value="1">$8000-$12000</option>
+                                    <option value="2">$12000-$40000</option>
+                                    <option value="3">$40000-$99999</option>
+                                </select>
+                            </div>
+                            <button class="blue-btn tabs__search-btn">
+                                <svg class="icon search">
+                                    <use xlink:href="img/sprite.svg#search"></use>
+                                </svg>
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tabs__element">
+                        <span class="tabs__title">Rent</span>
+                        <div class="tabs__selection">
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Location</span>
+                                <select name="location" id="rent-location-selector" class="tabs__location-selector" required>
+                                    <option selected>Dnaka</option>
+                                    <option value="1">London</option>
+                                    <option value="2">Tokio</option>
+                                    <option value="3">Milan</option>
+                                </select>
+                            </div>
+
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Property type</span>
+                                <select name="property" id="rent-property-selector" class="tabs__property-selector">
+                                    <option selected>Duplex</option>
+                                    <option value="1">Townhouse</option>
+                                    <option value="2">Something else</option>
+                                    <option value="3">Ilon Mask</option>
+                                </select>
+                            </div>
+                            
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Price</span>
+                                <select name="prive" id="rent-price-selector" class="tabs__price-selector">
+                                    <option selected>$4000-$8000</option>
+                                    <option value="1">$8000-$12000</option>
+                                    <option value="2">$12000-$40000</option>
+                                    <option value="3">$40000-$99999</option>
+                                </select>
+                            </div>
+                            <button class="blue-btn tabs__search-btn">
+                                <svg class="icon search">
+                                    <use xlink:href="img/sprite.svg#search"></use>
+                                </svg>
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tabs__element">
+                        <span class="tabs__title">Sell</span>
+                        <div class="tabs__selection">
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Location</span>
+                                <select name="location" id="sell-location-selector" class="tabs__location-selector" required>
+                                    <option selected>Dnaka</option>
+                                    <option value="1">London</option>
+                                    <option value="2">Tokio</option>
+                                    <option value="3">Milan</option>
+                                </select>
+                            </div>
+
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Property type</span>
+                                <select name="property" id="sell-property-selector" class="tabs__property-selector">
+                                    <option selected>Duplex</option>
+                                    <option value="1">Townhouse</option>
+                                    <option value="2">Something else</option>
+                                    <option value="3">Ilon Mask</option>
+                                </select>
+                            </div>
+                            
+                            <div class="nice-select-container">
+                                <span class="tabs__label">Price</span>
+                                <select name="prive" id="sell-price-selector" class="tabs__price-selector">
+                                    <option selected>$4000-$8000</option>
+                                    <option value="1">$8000-$12000</option>
+                                    <option value="2">$12000-$40000</option>
+                                    <option value="3">$40000-$99999</option>
+                                </select>
+                            </div>
+                            <button class="blue-btn tabs__search-btn">
+                                <svg class="icon search">
+                                    <use xlink:href="img/sprite.svg#search"></use>
+                                </svg>
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="img/house-1.jpg" alt="image with house" class="hero__right-side">
+        </div>
+    </section>
+</main>
+<script src="js/nice-select2.js"></script>
 <script src="js/script.js"></script>
 </body>
 
