@@ -265,6 +265,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
   }
   .hero__slogan {
     font-size: 61px;
@@ -274,19 +275,31 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
   }
   .hero__right-side {
-    position: unset;
+    position: absolute;
+    right: 0;
     display: block;
     max-width: 484px;
+    object-fit: cover;
     top: 0;
   }
 }
 .tabs {
-  background: #ffffff;
-  display: flex;
-  justify-content: stretch;
+  border-radius: 8px;
+  padding: 20px 20px 40px;
+  background: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.tabs__title-container {
   box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
   position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  display: flex;
+  padding: 0 9px;
+  border-radius: 5px 5px 0 0;
+  width: fit-content;
 }
 .tabs__title {
   display: block;
@@ -296,23 +309,34 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 27px;
   opacity: 0.7;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.tabs__title:hover {
+  opacity: 0.5;
 }
 .tabs__title--active {
   opacity: 1;
   color: #fe753f;
 }
-.tabs__selection {
-  width: 100%;
+.tabs__title--active:hover {
+  opacity: 1;
+}
+.tabs__elements-container {
+  width: 258px;
+  box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 5px 5px;
+}
+.tabs__element {
+  position: relative;
   display: none;
-  position: absolute;
   flex-direction: column;
   padding: 30px;
   left: 0;
   z-index: 1;
-  box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
   background: #ffffff;
+  border-radius: 0 0 5px 5px;
 }
-.tabs__selection--active {
+.tabs__element--active {
   display: flex;
 }
 .tabs__label {
@@ -330,23 +354,63 @@ h1, h2, h3, h4, h5, h6 {
 .tabs__location-selector {
   min-width: 88px;
 }
+.tabs__location-selector::after {
+  left: 80px;
+}
 .tabs__property-selector {
   min-width: 127px;
+}
+.tabs__property-selector::after {
+  left: 119px;
 }
 .tabs__price-selector {
   min-width: 155px;
 }
 .tabs__price-selector::after {
-  right: 98px !important;
+  left: 51px;
 }
 .tabs__search-btn {
   align-self: center;
   padding: 10px 12px;
 }
 
-@media screen and (min-width: 340px) {
+@media screen and (min-width: 1200px) {
+  .tabs {
+    padding: 0;
+    background: none;
+    border-radius: 5px;
+  }
+  .tabs__title-container {
+    border-radius: 5px 5px 0 0;
+    position: relative;
+  }
+  .tabs__title-container::after {
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    content: " ";
+    border-radius: 0 0 0 5px;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    box-shadow: -3px 3px #fff;
+  }
+  .tabs__elements-container {
+    width: 842px;
+    box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 0 5px 5px 5px;
+  }
+  .tabs__element {
+    border-radius: 0 5px 5px 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
   .tabs__label {
     font-size: 16px;
+  }
+  .tabs__search-btn {
+    padding: 15px 20px;
   }
 }
 .nice-select-container {
@@ -380,16 +444,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 33px;
 }
 
-@media screen and (min-width: 1200px) {
-  .nice-select .current,
-.nice-select .option {
-    font-size: 22px;
-    line-height: 33px;
-  }
-}
 .nice-select::after {
   top: 13px;
-  right: 2px;
   border-right: 1.5px solid #030a1b;
   border-bottom: 1.5px solid #030a1b;
   width: 6px;
@@ -398,10 +454,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (min-width: 1200px) {
-  .tabs__search-btn {
-    align-self: flex-start;
-    padding: 15px 20px;
+  .nice-select-container {
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
+  .nice-select-container:not(:last-of-type)::after {
+    display: block;
+    position: absolute;
+    width: 1px;
+    top: 10px;
+    right: -50px;
+    left: unset;
+    height: 34px;
+    background: rgba(3, 10, 27, 0.1);
+  }
+
+  .nice-select .current,
+.nice-select .option {
+    font-size: 22px;
+  }
+}
+.cont {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+}
+
+.kek {
+  margin: 0 auto;
+  border-radius: 0 0 0 100px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  box-shadow: -3px 3px black;
 }
 
 /*# sourceMappingURL=style.css.map */

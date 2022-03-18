@@ -226,6 +226,7 @@ $color-white: #ffffff;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
     }
     &__slogan {
       font-size: 61px;
@@ -235,22 +236,33 @@ $color-white: #ffffff;
       font-size: 18px;
     }
     &__right-side {
-      position: unset;
+      position: absolute;
+      right: 0;
       display: block;
       max-width: 484px;
+      object-fit: cover;
       top: 0;
     }
   }
 }
 
 .tabs {
-  //background-image: url(../img/house-1.jpg);
-  background: $color-white;
-  display: flex;
-  justify-content: stretch;
-  box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
-  position: relative;
+  border-radius: 8px;
+  padding: 20px 20px 40px;
+  background: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &__title-container {
+    box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    background-color: $color-white;
+    display: flex;
+    padding: 0 9px;
+    border-radius: 5px 5px 0 0;
+    width: fit-content;
+  }
   &__title {
     display: block;
     padding: 15px 22px 12px;
@@ -259,21 +271,32 @@ $color-white: #ffffff;
     line-height: 27px;
     opacity: 0.7;
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.5;
+    }
     &--active {
       opacity: 1;
       color: $color-orange;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
-  &__selection {
-    width: 100%;
+  &__elements-container {
+    width: 258px;
+    box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 5px 5px;
+  }
+  &__element {
+    position: relative;
     display: none;
-    position: absolute;
     flex-direction: column;
     padding: 30px;
     left: 0;
     z-index: 1;
-    box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
     background: $color-white;
+    border-radius: 0 0 5px 5px;
     &--active {
       display: flex;
     }
@@ -292,14 +315,20 @@ $color-white: #ffffff;
   }
   &__location-selector {
     min-width: 88px;
+    &::after {
+      left: 80px;
+    }
   }
   &__property-selector {
     min-width: 127px;
+    &::after {
+      left: 119px;
+    }
   }
   &__price-selector {
     min-width: 155px;
     &::after {
-      right: 98px !important;
+      left: 51px;
     }
   }
   &__search-btn {
@@ -308,13 +337,46 @@ $color-white: #ffffff;
   }
 }
 
-@media screen and (min-width: 340px) {
+@media screen and (min-width: 1200px) {
   .tabs {
+    padding: 0;
+    background: none;
+    border-radius: 5px;
+    &__title-container {
+      border-radius: 5px 5px 0 0;
+      position: relative;
+      &::after {
+        position: absolute;
+        right: -10px;
+        bottom: 0;
+        content: " ";
+        border-radius: 0 0 0 5px;
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        box-shadow: -3px 3px #fff;
+      }
+    }
+    &__elements-container {
+      width: 842px;
+      box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+      border-radius: 0 5px 5px 5px;
+    }
+    &__element {
+      border-radius: 0 5px 5px 5px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
     &__label {
       font-size: 16px;
     }
+    &__search-btn {
+      padding: 15px 20px;
+    }
   }
 }
+
 .nice-select-container {
   position: relative;
   padding-bottom: 15px;
@@ -345,19 +407,10 @@ $color-white: #ffffff;
     line-height: 33px;
   }
 }
-@media screen and (min-width: 1200px) {
-  .nice-select {
-    .current,
-    .option {
-      font-size: 22px;
-      line-height: 33px;
-    }
-  }
-}
 
 .nice-select::after {
   top: 13px;
-  right: 2px;
+  //right: 2px;
   border-right: 1.5px solid $color-black;
   border-bottom: 1.5px solid $color-black;
   width: 6px;
@@ -366,10 +419,42 @@ $color-white: #ffffff;
 }
 
 @media screen and (min-width: 1200px) {
-  .tabs {
-    &__search-btn {
-      align-self: flex-start;
-      padding: 15px 20px;
+  .nice-select-container {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    &:not(:last-of-type)::after {
+      display: block;
+      position: absolute;
+      width: 1px;
+      top: 10px;
+      right: -50px;
+      left: unset;
+      height: 34px;
+      background: rgba(3, 10, 27, 0.1);
     }
   }
+  .nice-select {
+    .current,
+    .option {
+      font-size: 22px;
+    }
+  }
+}
+
+.cont {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+}
+.kek {
+  margin: 0 auto;
+  border-radius: 0 0 0 100px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  box-shadow: -3px 3px black;
+  //   border: 100px solid red;
+  //   // border-top-color: transparent;
+  //   // border-right-color: transparent;
+  //   border-radius: 0 0 0 100px;
 }

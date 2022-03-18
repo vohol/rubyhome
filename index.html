@@ -55,9 +55,13 @@
                 </span>
                 <section class="hero__description">Buying a home is a life-changing experience, so shouldn’t your real estate agent be a life changer.</section>
                 <div class="tabs">
-                    <div class="tabs__element">
-                        <span class="tabs__title tabs__title--active">Buy</span>
-                        <div class="tabs__selection tabs__selection--active">
+                    <div class="tabs__title-container">
+                        <span data-action="buy" class="tabs__title tabs__title--active">Buy</span>
+                        <span data-action="rent" class="tabs__title">Rent</span>
+                        <span data-action="sell" class="tabs__title">Sell</span>
+                    </div>
+                    <div class="tabs__elements-container">
+                        <div data-action="buy" class="tabs__element tabs__element--active">
                             <div class="nice-select-container">
                                 <span class="tabs__label">Location</span>
                                 <select name="location" id="buy-location-selector" class="tabs__location-selector" required>
@@ -94,10 +98,7 @@
                                 Search
                             </button>
                         </div>
-                    </div>
-                    <div class="tabs__element">
-                        <span class="tabs__title">Rent</span>
-                        <div class="tabs__selection">
+                        <div data-action="rent" class="tabs__element">
                             <div class="nice-select-container">
                                 <span class="tabs__label">Location</span>
                                 <select name="location" id="rent-location-selector" class="tabs__location-selector" required>
@@ -134,10 +135,7 @@
                                 Search
                             </button>
                         </div>
-                    </div>
-                    <div class="tabs__element">
-                        <span class="tabs__title">Sell</span>
-                        <div class="tabs__selection">
+                        <div data-action="sell" class="tabs__element">
                             <div class="nice-select-container">
                                 <span class="tabs__label">Location</span>
                                 <select name="location" id="sell-location-selector" class="tabs__location-selector" required>
@@ -175,9 +173,10 @@
                             </button>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <img src="img/house-1.jpg" alt="image with house" class="hero__right-side">
+            <img src="img/hero.jpg" alt="image with house" class="hero__right-side">
         </div>
     </section>
 </main>
@@ -185,7 +184,6 @@
 <script src="js/script.js"></script>
 </body>
 
-</html>
 
 
 <!-- <svg class="icon close">

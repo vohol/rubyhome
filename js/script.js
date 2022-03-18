@@ -1,7 +1,7 @@
 const menuBtn = document.querySelector('.header__open-menu')
 const navigationMenu = document.querySelector('.header__navigation')
 const tabsButtons = document.querySelectorAll('.tabs__title')
-const tabsElements = document.querySelectorAll('.tabs__selection')
+const tabsElements = document.querySelectorAll('.tabs__element')
 
 document.addEventListener('click', openNavigationMenu);
 
@@ -18,16 +18,21 @@ document.addEventListener('click', tabHandler);
 
 function tabHandler(e) {
   const target = e.target;
+  console.log(target.dataset.action);
 
   if (target.classList.contains('tabs__title')) {
     tabsButtons.forEach(element => {
       element.classList.remove('tabs__title--active')
     });
+
+    target.classList.add('tabs__title--active');
+
     tabsElements.forEach(element => {
-      element.classList.remove('tabs__selection--active')
+      element.classList.remove('tabs__element--active')
+      if (element.dataset.action == target.dataset.action) {
+        element.classList.add('tabs__element--active')
+      }
     });
-    target.classList.add('tabs__title--active')
-    target.nextElementSibling.classList.add('tabs__selection--active')
   }
 }
 
