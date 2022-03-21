@@ -15,10 +15,20 @@ function openNavigationMenu(e) {
 }
 
 document.addEventListener('click', tabHandler);
+document.addEventListener('click', likeHandler);
+
+function likeHandler(e) {
+  const target = e.target;
+  console.log(target);
+
+  target.parentNode.classList.contains('heart') &&
+    target.parentNode.classList.toggle('heart--red');
+  target.classList.contains('heart') &&
+    target.classList.toggle('heart--red');
+} 
 
 function tabHandler(e) {
   const target = e.target;
-  console.log(target.dataset.action);
 
   if (target.classList.contains('tabs__title')) {
     tabsButtons.forEach(element => {
