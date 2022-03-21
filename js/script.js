@@ -55,3 +55,22 @@ NiceSelect.bind(document.getElementById('rent-price-selector'))
 NiceSelect.bind(document.getElementById('sell-location-selector'))
 NiceSelect.bind(document.getElementById('sell-property-selector'))
 NiceSelect.bind(document.getElementById('sell-price-selector'))
+
+const swiper = new Swiper('.swiper', {
+  spaceBetween: 30,
+  grabCursor: true,
+  loop: true,
+  slidesPerView: 1,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  breakpoints: {
+    // when window width is >= 1200px
+    1200: {
+      slidesPerView: 2,
+    },
+  }
+});
