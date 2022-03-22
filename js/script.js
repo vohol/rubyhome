@@ -2,6 +2,7 @@ const menuBtn = document.querySelector('.header__open-menu')
 const navigationMenu = document.querySelector('.header__navigation')
 const tabsButtons = document.querySelectorAll('.tabs__title')
 const tabsElements = document.querySelectorAll('.tabs__element')
+AOS.init();
 
 document.addEventListener('click', openNavigationMenu);
 

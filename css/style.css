@@ -353,19 +353,19 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 }
 .tabs__location-selector {
-  min-width: 88px;
+  width: 88px;
 }
 .tabs__location-selector::after {
   left: 80px;
 }
 .tabs__property-selector {
-  min-width: 127px;
+  width: 127px;
 }
 .tabs__property-selector::after {
   left: 119px;
 }
 .tabs__price-selector {
-  min-width: 155px;
+  width: 155px;
 }
 .tabs__price-selector::after {
   left: 51px;
@@ -605,6 +605,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .properties__content {
     grid-template-columns: 1fr 1fr;
+    align-items: stretch;
   }
 }
 @media screen and (min-width: 1180px) {
@@ -743,7 +744,14 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 70px;
 }
 .features__title {
+  text-align: center;
+  display: block;
+  max-width: 320px;
   margin-bottom: 10px;
+  margin-left: 7px;
+}
+.features__title span {
+  display: inline-block;
 }
 .features__subtitle {
   max-width: 728px;
@@ -796,11 +804,21 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.7;
 }
 .features__image img {
+  display: block;
+  width: 100%;
   max-width: 362;
   border-radius: 10px;
   object-fit: contain;
 }
 
+@media screen and (min-width: 754px) {
+  .features__title {
+    max-width: unset;
+  }
+  .features__title span {
+    display: inline-block;
+  }
+}
 @media screen and (min-width: 1200px) {
   .features__content {
     flex-direction: row;
@@ -810,11 +828,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .reviews .container {
+  display: block;
   padding-top: 140px;
   margin-bottom: 140px;
 }
 .reviews .orange-span {
   display: block;
+  align-self: center;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -822,7 +842,14 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 .reviews__title {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  max-width: 320px;
   margin-bottom: 70px;
+}
+.reviews__title span {
+  display: inline-block;
 }
 
 .swiper {
@@ -838,6 +865,13 @@ h1, h2, h3, h4, h5, h6 {
   background: #ffffff;
   border: 2px solid rgba(254, 117, 63, 0.1);
   border-radius: 10px;
+}
+.swiper__item:after {
+  content: url(../img/quotes.png);
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  opacity: 0.1;
 }
 .swiper__first-row {
   display: flex;
@@ -872,6 +906,23 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 10px);
 }
 
+@media screen and (min-width: 400px) {
+  .swiper__item:after {
+    top: 25px;
+    right: 30px;
+  }
+}
+@media screen and (min-width: 754px) {
+  .reviews .container {
+    display: block;
+  }
+  .reviews__title {
+    max-width: unset;
+  }
+  .reviews__title span {
+    display: inline-block;
+  }
+}
 @media screen and (min-width: 1200px) {
   .swiper {
     max-width: unset;
@@ -887,6 +938,212 @@ h1, h2, h3, h4, h5, h6 {
   }
   .swiper__position, .swiper__review {
     font-size: 16px;
+  }
+}
+.subscribe .container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: #433e89;
+  margin-bottom: 140px;
+}
+.subscribe__title {
+  text-align: center;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+.subscribe__description {
+  max-width: 635px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.7;
+  margin-bottom: 70px;
+}
+.subscribe__email-wrapper {
+  position: relative;
+}
+.subscribe__email {
+  padding-left: 30px;
+  padding-right: 127px;
+  width: 100%;
+  max-width: 743px;
+  min-height: 54px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(3, 10, 27, 0.5);
+  border-radius: 10px;
+}
+.subscribe__email:invalid {
+  border: 1px solid #e61e14;
+  color: rgba(230, 30, 20, 0.5);
+}
+.subscribe__btn {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+}
+.subscribe__rectangle {
+  position: absolute;
+  width: 208px;
+  height: 208px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  opacity: 0.1;
+}
+.subscribe .first-rect {
+  top: 25px;
+  left: -158px;
+}
+.subscribe .second-rect {
+  bottom: -135px;
+  right: 16px;
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe .container {
+    border-radius: 10px;
+  }
+  .subscribe__description {
+    font-size: 16px;
+  }
+  .subscribe__email {
+    padding-right: 177px;
+    min-height: 70px;
+    font-size: 16px;
+  }
+  .subscribe__btn {
+    padding: 16px 30px;
+  }
+}
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 190px;
+}
+.footer__logo {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.footer .logo {
+  max-width: 220px;
+}
+.footer__description {
+  max-width: 262px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__column ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__column .footer__icons {
+  flex-direction: row;
+}
+.footer__column:not(:last-child) {
+  margin-bottom: 30px;
+}
+.footer__column li a {
+  font-size: 16px;
+  line-height: 17px;
+  opacity: 0.7;
+}
+.footer__column li a:hover {
+  color: #fe753f;
+}
+.footer__column li:not(:last-child) {
+  margin-bottom: 15px;
+}
+.footer__icons li:not(:last-child) {
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+.footer__icons li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #fe753f;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+.footer__icons li a:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 5px #fe753f;
+}
+.footer__icons li a:hover .icon {
+  fill: #fe753f;
+}
+.footer__icons li .icon {
+  transition: all 0.3s;
+  fill: #ffffff;
+}
+.footer__icons li .facebook {
+  width: 6px;
+  height: 12.37px;
+}
+.footer__icons li .im {
+  width: 12px;
+  height: 12px;
+}
+.footer__icons li .twitter {
+  width: 14px;
+  height: 14px;
+}
+.footer__icons li .youtube {
+  width: 14px;
+  height: 10px;
+}
+.footer__icons li .linkidin {
+  width: 12px;
+  height: 12.37px;
+}
+.footer__column-title {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .footer__column {
+    align-items: stretch;
+  }
+  .footer__column ul {
+    align-items: stretch;
+  }
+  .footer__column .footer__icons {
+    flex-direction: row;
+  }
+  .footer__column:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .footer__column-title {
+    padding-top: 12px;
   }
 }
 
