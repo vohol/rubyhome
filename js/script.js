@@ -2,7 +2,40 @@ const menuBtn = document.querySelector('.header__open-menu')
 const navigationMenu = document.querySelector('.header__navigation')
 const tabsButtons = document.querySelectorAll('.tabs__title')
 const tabsElements = document.querySelectorAll('.tabs__element')
+
+//init aos library
 AOS.init();
+
+//init selectors
+NiceSelect.bind(document.getElementById('buy-location-selector'))
+NiceSelect.bind(document.getElementById('buy-property-selector'))
+NiceSelect.bind(document.getElementById('buy-price-selector'))
+NiceSelect.bind(document.getElementById('rent-location-selector'))
+NiceSelect.bind(document.getElementById('rent-property-selector'))
+NiceSelect.bind(document.getElementById('rent-price-selector'))
+NiceSelect.bind(document.getElementById('sell-location-selector'))
+NiceSelect.bind(document.getElementById('sell-property-selector'))
+NiceSelect.bind(document.getElementById('sell-price-selector'))
+
+//init swiper
+const swiper = new Swiper('.swiper', {
+  spaceBetween: 30,
+  grabCursor: true,
+  loop: true,
+  slidesPerView: 1,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  breakpoints: {
+    1200: {
+      slidesPerView: 2,
+    },
+  }
+});
+
 
 document.addEventListener('click', openNavigationMenu);
 
@@ -46,32 +79,3 @@ function tabHandler(e) {
     });
   }
 }
-
-NiceSelect.bind(document.getElementById('buy-location-selector'))
-NiceSelect.bind(document.getElementById('buy-property-selector'))
-NiceSelect.bind(document.getElementById('buy-price-selector'))
-NiceSelect.bind(document.getElementById('rent-location-selector'))
-NiceSelect.bind(document.getElementById('rent-property-selector'))
-NiceSelect.bind(document.getElementById('rent-price-selector'))
-NiceSelect.bind(document.getElementById('sell-location-selector'))
-NiceSelect.bind(document.getElementById('sell-property-selector'))
-NiceSelect.bind(document.getElementById('sell-price-selector'))
-
-const swiper = new Swiper('.swiper', {
-  spaceBetween: 30,
-  grabCursor: true,
-  loop: true,
-  slidesPerView: 1,
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-  breakpoints: {
-    // when window width is >= 1200px
-    1200: {
-      slidesPerView: 2,
-    },
-  }
-});
