@@ -4,7 +4,12 @@ const tabsButtons = document.querySelectorAll('.tabs__title')
 const tabsElements = document.querySelectorAll('.tabs__element')
 
 //init aos library
-AOS.init();
+AOS.init({
+  disable: function() {
+    const maxWidth = 800;
+    return window.innerWidth < maxWidth;
+  }
+});
 
 //init selectors
 NiceSelect.bind(document.getElementById('buy-location-selector'))
@@ -53,7 +58,6 @@ document.addEventListener('click', likeHandler);
 
 function likeHandler(e) {
   const target = e.target;
-  console.log(target);
 
   target.parentNode.classList.contains('heart') &&
     target.parentNode.classList.toggle('heart--red');

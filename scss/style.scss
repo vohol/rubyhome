@@ -586,8 +586,10 @@ $color-white: #ffffff;
   padding-bottom: 30px;
   &__image {
     width: 100%;
-    object-fit: contain;
+    height: 321px;
+    object-fit: cover;
     margin-bottom: 30px;
+    border-radius: 10px 10px 0 0;
     & ~ div {
       padding: 0 30px;
     }
@@ -972,10 +974,6 @@ $color-white: #ffffff;
     line-height: 24px;
     color: rgba(3, 10, 27, 0.5);
     border-radius: 10px;
-    &:invalid {
-      border: 1px solid #e61e14;
-      color: rgba(230, 30, 20, 0.5);
-    }
   }
   &__btn {
     position: absolute;
@@ -1024,7 +1022,7 @@ $color-white: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 190px;
+    padding-bottom: 190px;
   }
   &__logo {
     display: block;
@@ -1046,79 +1044,77 @@ $color-white: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
     .footer__icons {
       flex-direction: row;
     }
     &:not(:last-child) {
       margin-bottom: 30px;
     }
-    li {
-      a {
-        font-size: 16px;
-        line-height: 17px;
-        opacity: 0.7;
-        &:hover {
-          color: $color-orange;
-        }
+  }
+  &__link-wrapper {
+    & > a {
+      font-size: 16px;
+      line-height: 17px;
+      opacity: 0.7;
+      &:hover {
+        color: $color-orange;
       }
-      &:not(:last-child) {
-        margin-bottom: 15px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__icons > &__link-wrapper {
+    &:not(:last-child) {
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+  }
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: $color-orange;
+    border-radius: 50px;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $color-white;
+      box-shadow: 0 0 10px 5px $color-orange;
+      .icon {
+        fill: $color-orange;
       }
     }
   }
-  &__icons {
-    li {
-      &:not(:last-child) {
-        margin-right: 15px;
-        margin-bottom: 0;
-      }
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
-        background-color: $color-orange;
-        border-radius: 50px;
-        transition: all 0.3s;
-        &:hover {
-          background-color: $color-white;
-          box-shadow: 0 0 10px 5px $color-orange;
-          .icon {
-            fill: $color-orange;
-          }
-        }
-      }
-      .icon {
-        transition: all 0.3s;
-        fill: $color-white;
-      }
-      .facebook {
-        width: 6px;
-        height: 12.37px;
-      }
-      .im {
-        width: 12px;
-        height: 12px;
-      }
-      .twitter {
-        width: 14px;
-        height: 14px;
-      }
-      .youtube {
-        width: 14px;
-        height: 10px;
-      }
-      .linkidin {
-        width: 12px;
-        height: 12.37px;
-      }
-    }
+  .icon {
+    transition: all 0.3s;
+    fill: $color-white;
+  }
+  .facebook {
+    width: 6px;
+    height: 12.37px;
+  }
+  .im {
+    width: 12px;
+    height: 12px;
+  }
+  .twitter {
+    width: 14px;
+    height: 14px;
+  }
+  .youtube {
+    width: 14px;
+    height: 10px;
+  }
+  .linkidin {
+    width: 12px;
+    height: 12.37px;
   }
   &__column-title {
     font-weight: 600;
@@ -1137,15 +1133,15 @@ $color-white: #ffffff;
     }
     &__column {
       align-items: stretch;
-      ul {
-        align-items: stretch;
-      }
-      .footer__icons {
-        flex-direction: row;
-      }
       &:not(:last-child) {
         margin-bottom: 0;
       }
+    }
+    &__icons {
+      flex-direction: row;
+    }
+    &__list {
+      align-items: stretch;
     }
     &__column-title {
       padding-top: 12px;

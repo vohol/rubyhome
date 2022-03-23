@@ -624,8 +624,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .property-item__image {
   width: 100%;
-  object-fit: contain;
+  height: 321px;
+  object-fit: cover;
   margin-bottom: 30px;
+  border-radius: 10px 10px 0 0;
 }
 .property-item__image ~ div {
   padding: 0 30px;
@@ -981,10 +983,6 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(3, 10, 27, 0.5);
   border-radius: 10px;
 }
-.subscribe__email:invalid {
-  border: 1px solid #e61e14;
-  color: rgba(230, 30, 20, 0.5);
-}
 .subscribe__btn {
   position: absolute;
   right: 7px;
@@ -1027,7 +1025,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 190px;
+  padding-bottom: 190px;
 }
 .footer__logo {
   display: block;
@@ -1050,33 +1048,33 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
 }
-.footer__column ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .footer__column .footer__icons {
   flex-direction: row;
 }
 .footer__column:not(:last-child) {
   margin-bottom: 30px;
 }
-.footer__column li a {
+.footer__link-wrapper > a {
   font-size: 16px;
   line-height: 17px;
   opacity: 0.7;
 }
-.footer__column li a:hover {
+.footer__link-wrapper > a:hover {
   color: #fe753f;
 }
-.footer__column li:not(:last-child) {
+.footer__link-wrapper:not(:last-child) {
   margin-bottom: 15px;
 }
-.footer__icons li:not(:last-child) {
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__icons > .footer__link-wrapper:not(:last-child) {
   margin-right: 15px;
   margin-bottom: 0;
 }
-.footer__icons li a {
+.footer .icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1086,34 +1084,34 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50px;
   transition: all 0.3s;
 }
-.footer__icons li a:hover {
+.footer .icon-wrapper:hover {
   background-color: #ffffff;
   box-shadow: 0 0 10px 5px #fe753f;
 }
-.footer__icons li a:hover .icon {
+.footer .icon-wrapper:hover .icon {
   fill: #fe753f;
 }
-.footer__icons li .icon {
+.footer .icon {
   transition: all 0.3s;
   fill: #ffffff;
 }
-.footer__icons li .facebook {
+.footer .facebook {
   width: 6px;
   height: 12.37px;
 }
-.footer__icons li .im {
+.footer .im {
   width: 12px;
   height: 12px;
 }
-.footer__icons li .twitter {
+.footer .twitter {
   width: 14px;
   height: 14px;
 }
-.footer__icons li .youtube {
+.footer .youtube {
   width: 14px;
   height: 10px;
 }
-.footer__icons li .linkidin {
+.footer .linkidin {
   width: 12px;
   height: 12.37px;
 }
@@ -1133,14 +1131,14 @@ h1, h2, h3, h4, h5, h6 {
   .footer__column {
     align-items: stretch;
   }
-  .footer__column ul {
-    align-items: stretch;
-  }
-  .footer__column .footer__icons {
-    flex-direction: row;
-  }
   .footer__column:not(:last-child) {
     margin-bottom: 0;
+  }
+  .footer__icons {
+    flex-direction: row;
+  }
+  .footer__list {
+    align-items: stretch;
   }
   .footer__column-title {
     padding-top: 12px;
